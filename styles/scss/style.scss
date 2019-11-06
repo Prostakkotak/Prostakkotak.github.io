@@ -1,7 +1,4 @@
 $default-padding: 0 230px 0 230px;
-$extrabold-font: 'roboto extrabold';
-$semibold-font: 'roboto semibold';
-$light-font: 'roboto light';
 $unhover-link-color: rgba(0, 0, 0, .55);
 $hover-link-color: rgba(0, 0, 0, 1);
 $border-color: rgba(0, 0, 0, .2);
@@ -61,7 +58,6 @@ body {
   line-height: 24px;
   letter-spacing: 1.05px;
   text-transform: uppercase;
-  font-family: $extrabold-font;
   text-decoration: none;
   color: $unhover-link-color;
   transition: $default-transition;
@@ -269,7 +265,6 @@ body {
 }
 
 .content__link {
-  font-family: $semibold-font;
   font-size: 14px;
   color: $unhover-link-color;
   text-transform: uppercase;
@@ -352,7 +347,6 @@ body {
   border-radius: 2px;
   color: rgba(255, 255, 255, 1);
   font-size: 13px;
-  font-family: $semibold-font;
   text-transform: uppercase;
   cursor: pointer;
   transition: $default-transition;
@@ -421,7 +415,6 @@ body {
 
 .team__text_working-position {
   font-size: 16px;
-  font-family: $extrabold-font;
   margin-bottom: 10px;
 }
 
@@ -437,7 +430,6 @@ body {
   display: inline-block;
   margin-bottom: 15px;
   font-size: 16px;
-  font-family: $extrabold-font;
   color: rgba(0, 0, 0, .7);
 }
 
@@ -571,7 +563,6 @@ body {
   width: 164px;
   height: 60px;
   text-align: center;
-  font-family: $semibold-font;
   font-size: 13px;
   line-height: 24px;
   letter-spacing: 0.75px;
@@ -682,7 +673,6 @@ body {
   font-size: 16px;
   letter-spacing: 0.25px;
   line-height: 30px;
-  font-family: $extrabold-font;
   color: rgba(0, 0, 0, .65);
 }
 
@@ -690,11 +680,10 @@ body {
   font-size: 16px;
   letter-spacing: 0.25px;
   line-height: 36px;
-  font-family: $semibold-font;
 }
 
 .portfolio-details__header_related-works {
-  font-family: $light-font;
+  font-weight: 300;
   letter-spacing: 12px;
   margin: 0 auto 30px auto;
   width: 550px;
@@ -752,7 +741,6 @@ body {
   font-size: 14px;
   letter-spacing: 0.25px;
   line-height: 48px;
-  font-family: $extrabold-font;
 }
 
 .portfolio-details__text_likes {
@@ -780,7 +768,6 @@ body {
   font-size: 13px;
   letter-spacing: 0.5px;
   line-height: 24px;
-  font-family: $semibold-font;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 1);
   background-color: $unhover-link-color;
@@ -1050,7 +1037,6 @@ body {
   color: rgba(255, 255, 255, .95);
   text-transform: uppercase;
   font-size: 13px;
-  font-family: $semibold-font;
   line-height: 18px;
 }
 
@@ -1063,7 +1049,6 @@ body {
   text-decoration: none;
   margin-bottom: 30px;
   font-size: 20px;
-  font-family: $semibold-font;
   line-height: 30px;
   display: block;
 }
@@ -1088,7 +1073,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 8px;
   font-size: 18px;
-  font-family: $light-font;
+  font-weight: 300;
   line-height: 24px;
 }
 
@@ -1107,7 +1092,6 @@ body {
   width: 205px;
   vertical-align: top;
   font-size: 16px;
-  font-family: $semibold-font;
   line-height: 20px;
 }
 
@@ -1116,7 +1100,7 @@ body {
   line-height: 30px;
   letter-spacing: 3px;
   margin-bottom: 0;
-  font-family: $light-font;
+  font-weight: 300;
   text-transform: uppercase;
   text-align: center;
 }
@@ -1139,7 +1123,7 @@ body {
 
 .blog__header_single-post_leave-comment {
   text-transform: uppercase;
-  font-family: $light-font;
+  font-weight: 300;
   line-height: 60px;
   letter-spacing: 4px;
   text-align: center;
@@ -1153,7 +1137,6 @@ body {
 .blog__author {
   font-size: 13px;
   line-height: 30px;
-  font-family: $semibold-font;
   color: rgba(0, 0, 0, .3);
 
   i {
@@ -1176,7 +1159,6 @@ body {
   font-size: 14px;
   letter-spacing: 0.25px;
   line-height: 48px;
-  font-family: "roboto extrabold";
   color: rgba(0, 0, 0, .45);
 }
 
@@ -1220,7 +1202,6 @@ body {
   font-size: 14px;
   letter-spacing: 0.25px;
   line-height: 48px;
-  font-family: "roboto extrabold";
 }
 
 .blog__text_social-action {
@@ -1250,7 +1231,6 @@ body {
   font-size: 14px;
   letter-spacing: 0.25px;
   line-height: 48px;
-  font-family: "roboto extrabold";
   color: rgba(0, 0, 0, 0.45);
 
   i {
@@ -1296,7 +1276,6 @@ body {
   margin-bottom: 40px;
   padding: 20px 30px;
   font-size: 18px;
-  font-family: $semibold-font;
   font-style: italic;
   color: rgba(0, 0, 0, .45);
   line-height: 30px;
@@ -1355,7 +1334,6 @@ body {
 
 .leave-comment__send {
   font-size: 14px;
-  font-family: $semibold-font;
   color: rgba(255, 255, 255, .85);
   background-color: rgba(0, 0, 0, 1);
   margin-top: 20px;
@@ -1421,7 +1399,6 @@ body {
   font-size: 14px;
   letter-spacing: 0.25px;
   line-height: 48px;
-  font-family: "roboto extrabold";
   color: rgba(0, 0, 0, 0.45);
   text-decoration: none;
   transition: $default-transition;
@@ -1449,7 +1426,7 @@ body {
   line-height: 24px;
   letter-spacing: 8px;
   text-transform: uppercase;
-  font-family: $light-font;
+  font-weight: 300;
   margin-bottom: 10px;
 }
 
@@ -1458,7 +1435,6 @@ body {
   font-size: 14px;
   line-height: 30px;
   letter-spacing: 0.25px;
-  font-family: $semibold-font;
   text-transform: uppercase;
 }
 
@@ -1477,7 +1453,7 @@ body {
   font-size: 16px;
   line-height: 30px;
   letter-spacing: 0.25px;
-  font-family: $light-font;
+  font-weight: 300;
   color: $unhover-link-color;
 }
 
@@ -1495,7 +1471,6 @@ body {
   letter-spacing: 0.25px;
 
   span {
-    font-family: $semibold-font;
     color: rgba(0, 0, 0, 1);
   }
 }
@@ -1504,7 +1479,7 @@ body {
   font-size: 14px;
   line-height: 30px;
   letter-spacing: 0.25px;
-  font-family: $light-font;
+  font-weight: 300;
 }
 
 .contact__text_values {
