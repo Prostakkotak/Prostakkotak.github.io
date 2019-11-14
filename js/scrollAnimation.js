@@ -28,35 +28,50 @@
 
     if (isPartiallyVisible(columnsContainer)) {
       var listItems,
-          sidebarAnimation;
-      
-      if (firstColumn.classList.contains('content__images-column')) {
-        listItems = document.getElementsByClassName('content__image-wrapper');
-      } else if (firstColumn.classList.contains('blog__content-column')) {
+        sidebarAnimation;
+
+      if (firstColumn.classList.contains('products__column')) {
+        listItems = document.getElementsByClassName('products__item');
+      } else if (firstColumn.classList.contains('blog__posts-column')) {
         listItems = document.getElementsByClassName('blog__post');
       }
-      
-      if (thirdColumn.classList.contains('blog__content-column_sidebar')) {
+
+      if (thirdColumn.classList.contains('blog__posts-column_sidebar')) {
         sidebarAnimation = true;
+        var widgets = thirdColumn.getElementsByClassName('blog__widget');
       } else {
         sidebarAnimation = false;
       }
-      
+
       for (let i = 0; i < listItems.length; i++) {
-        var listItem = listItems[i];
-        
-        if (sidebarAnimation) {
+
+        if (isPartiallyVisible(listItems[i])) {
+          listItems[i].classList.add('active');
+        } else {
+          listItems[i].classList.remove('active');
+        }
+      }
+
+      if (sidebarAnimation) {
+        for (let i = 0; i < widgets.length; i++) {
+
           if (isPartiallyVisible(thirdColumn)) {
             thirdColumn.classList.add('active');
           } else {
             thirdColumn.classList.remove('active');
           }
-        }
-        
-        if (isPartiallyVisible(listItem)) {
-          listItem.classList.add('active');
-        } else {
-          listItem.classList.remove('active');
+          
+          if (isPartiallyVisible(thirdColumn.getElementsByClassName('blog__search')[0])) {
+            thirdColumn.getElementsByClassName('blog__search')[0].classList.add('active');
+          } else {
+            thirdColumn.getElementsByClassName('blog__search')[0].classList.remove('active');
+          }
+
+          if (isPartiallyVisible(widgets[i])) {
+            widgets[i].classList.add('active');
+          } else {
+            widgets[i].classList.remove('active');
+          }
         }
       }
 
