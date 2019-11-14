@@ -40,8 +40,8 @@
     </div>
 
     <div class="blog">
-      <div class="blog__content">
-        <div class="blog__content-column">
+      <div id="columns-container" class="blog__content">
+        <div id="first-column" class="blog__content-column">
           <div class="blog__post">
             <div class="blog__post-text-block">
               <div class="blog__title">wordpress</div>
@@ -80,7 +80,7 @@
             </div>
           </div>
         </div>
-        <div class="blog__content-column">
+        <div id="second-column" class="blog__content-column">
           <div class="blog__post">
             <img class="flexible-image" src="images/content-images/content-image-5.jpg" alt="">
             <div class="blog__post-text-block">
@@ -116,7 +116,7 @@
           <input type="button" class="load-more__button" value="load more">
         </div>
       </div>
-      <div class="blog__content-column blog__content-column_sidebar">
+      <div id="third-column" class="blog__content-column blog__content-column_sidebar">
         <div class="blog__search">
           <input type="text" class="blog__search-input" placeholder="Search">
           <a href="#" class="blog__search-link"><i class="fas fa-search"></i></a>
@@ -219,11 +219,11 @@
     <footer class="footer">
       <div class="logo logo_footer"><img class="logo__img" src="images/logo.png" alt="logo"></div>
       <div class="footer__social-networks"><img src="images/social-networks.png" alt=""></div>
-      <div class="footer__copyright">&copy; 2016 <span class="footer__copyright_black">Mulitix Theme</span> by ThemeForces. All Rights Reserved.</div>
     </footer>
   </div>
   <script src="js/nav-search-script.js"></script>
   <script src="js/blog-script.js"></script>
+  <script src="js/scrollAnimation.js"></script>
 </body>
 
 </html>
