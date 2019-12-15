@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles/css-reset.css">
   <link rel="stylesheet" href="styles/css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
@@ -14,15 +15,27 @@
 
   <div class="wrapper">
     <div class="header">
-      <nav class="nav-menu">
+      <nav class="nav">
+        <div class="nav__open-button">
+          <div class="trigram" id="trigram">
+            <div class="trigram__line"></div>
+            <div class="trigram__line"></div>
+            <div class="trigram__line"></div>
+          </div>
+        </div>
         <div class="logo"><img class="logo__img" src="images/logo.png" alt="logo"></div>
-        <ul class="nav-menu__menu">
-          <li class="nav-menu__item nav-menu__item_search"><i class="fas fa-search"></i></li>
-          <li class="nav-menu__item"><a href="https://prostakkotak.github.io" class="nav-menu__link">home</a></li>
-          <li class="nav-menu__item"><a href="https://prostakkotak.github.io/about.html" class="nav-menu__link">about</a></li>
-          <li class="nav-menu__item"><a href="https://prostakkotak.github.io/portfolio.html" class="nav-menu__link">portfolio</a></li>
-          <li class="nav-menu__item"><a href="https://prostakkotak.github.io/blog.html" class="nav-menu__link nav-menu__link_selected">blog</a></li>
-          <li class="nav-menu__item"><a href="https://prostakkotak.github.io/contact.html" class="nav-menu__link">contact</a></li>
+        <ul class="nav__menu">
+          <li class="nav__item"><a href="https://prostakkotak.github.io" class="nav__link">home</a></li>
+          <li class="nav__item"><a href="https://prostakkotak.github.io/about.html" class="nav__link">about</a></li>
+          <li class="nav__item"><a href="https://prostakkotak.github.io/portfolio.html" class="nav__link">portfolio</a></li>
+          <li class="nav__item"><a href="https://prostakkotak.github.io/blog.html" class="nav__link nav__link_selected">blog</a></li>
+          <li class="nav__item"><a href="https://prostakkotak.github.io/contact.html" class="nav__link">contact</a></li>
+          <li class="nav__item nav__item_search">
+            <div id="open_search_block" class="nav__item_search-buttons">
+              <i id="open_search_button" class="fas fa-search current"></i>
+              <i id="close_search_button" class="fas fa-times"></i>
+            </div>
+          </li>
         </ul>
       </nav>
       <div class="nav-search">
@@ -40,6 +53,12 @@
     </div>
 
     <div class="blog">
+     <div class="blog__sidebar-open-button">Sidebar
+      <div class="blog__sidebar-open-arrow">
+        <div class="blog__line"></div>
+        <div class="blog__line"></div>
+      </div>
+    </div>
       <div id="columns-container" class="blog__posts">
         <div id="first-column" class="blog__posts-column">
           <div class="blog__post">
@@ -112,8 +131,12 @@
             </div>
           </div>
         </div>
-        <div class="load-more">
-          <input type="button" class="load-more__button" value="load more">
+        <div class="pagination">
+          <ul class="pagination__pages-list">
+            <li class="pagination__page pagination__page_selected">1</li>
+            <li class="pagination__page">2</li>
+            <li class="pagination__page">3</li>
+          </ul>
         </div>
       </div>
       <div id="third-column" class="blog__posts-column blog__posts-column_sidebar">
@@ -224,4 +247,6 @@
   <script src="js/nav-search-script.js"></script>
   <script src="js/blog-script.js"></script>
   <script src="js/scrollAnimation.js"></script>
-</body></html>
+</body>
+
+</html>

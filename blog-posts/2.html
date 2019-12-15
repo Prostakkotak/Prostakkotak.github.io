@@ -3,8 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../styles/css-reset.css">
   <link rel="stylesheet" href="../styles/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/5d8af9cd0e.js"></script>
   <title>I am a Blog Post Title</title>
 </head>
@@ -13,15 +15,27 @@
 
   <div class="wrapper">
     <div class="header">
-      <nav class="nav-menu">
+      <nav class="nav">
+        <div class="nav__open-button">
+          <div class="trigram" id="trigram">
+            <div class="trigram__line"></div>
+            <div class="trigram__line"></div>
+            <div class="trigram__line"></div>
+          </div>
+        </div>
         <div class="logo"><img class="logo__img" src="../images/logo.png" alt="logo"></div>
-        <ul class="nav-menu__menu">
-          <li class="nav-menu__item"><a href="https://prostakkotak.github.io" class="nav-menu__link">home</a></li>
-          <li class="nav-menu__item"><a href="https://prostakkotak.github.io/about.html" class="nav-menu__link">about</a></li>
-          <li class="nav-menu__item"><a href="https://prostakkotak.github.io/portfolio.html" class="nav-menu__link">portfolio</a></li>
-          <li class="nav-menu__item"><a href="https://prostakkotak.github.io/blog.html" class="nav-menu__link nav-menu__link_selected">blog</a></li>
-          <li class="nav-menu__item"><a href="https://prostakkotak.github.io/contact.html" class="nav-menu__link">contact</a></li>
-          <li class="nav-menu__item nav-menu__item_search"><i class="fas fa-search"></i></li>
+        <ul class="nav__menu">
+          <li class="nav__item"><a href="https://prostakkotak.github.io" class="nav__link">home</a></li>
+          <li class="nav__item"><a href="https://prostakkotak.github.io/about.html" class="nav__link">about</a></li>
+          <li class="nav__item"><a href="https://prostakkotak.github.io/portfolio.html" class="nav__link nav__link_selected">portfolio</a></li>
+          <li class="nav__item"><a href="https://prostakkotak.github.io/blog.html" class="nav__link">blog</a></li>
+          <li class="nav__item"><a href="https://prostakkotak.github.io/contact.html" class="nav__link">contact</a></li>
+          <li class="nav__item nav__item_search">
+            <div id="open_search_block" class="nav__item_search-buttons">
+              <i id="open_search_button" class="fas fa-search current"></i>
+              <i id="close_search_button" class="fas fa-times"></i>
+            </div>
+          </li>
         </ul>
       </nav>
       <div class="nav-search">
@@ -38,7 +52,7 @@
       </div>
     </div>
 
-    <div class="blog blog_single-post">
+    <div class="blog_single-post">
       <div class="blog__header blog__header_single-post">I am a blog post with title</div>
       <div class="single-post__info">
         <div class="blog__author blog__author_single-post"><i class="fas fa-user-alt"></i>by Jenn Pereira</div>
@@ -64,9 +78,11 @@
       
       <form class="leave-comment single-post__text-block">
         <div class="blog__header blog__header_single-post_leave-comment">leave a comment</div>
+        <div class="leave-comment__input-wrapper">
         <input type="text" id="leave-comment__name" class="leave-comment__input" placeholder="Name">
         <input type="text" id="leave-comment__email" class="leave-comment__input" placeholder="Email">
         <input type="text" id="leave-comment__website" class="leave-comment__input" placeholder="Website">
+        </div>
         <textarea id="leave-comment__message" class="leave-comment__message" placeholder="Message"></textarea>
         <input type="button" class="leave-comment__send" id="leave-comment__send" value="send message">
       </form>

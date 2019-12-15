@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles/css-reset.css">
   <link rel="stylesheet" href="styles/css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
@@ -14,15 +15,27 @@
 
   <div class="wrapper">
     <div class="header">
-      <nav class="nav-menu">
+      <nav class="nav">
+        <div class="nav__open-button">
+          <div class="trigram" id="trigram">
+            <div class="trigram__line"></div>
+            <div class="trigram__line"></div>
+            <div class="trigram__line"></div>
+          </div>
+        </div>
         <div class="logo"><img class="logo__img" src="images/logo.png" alt="logo"></div>
-        <ul class="nav-menu__menu">
-          <li class="nav-menu__item"><a href="https://prostakkotak.github.io" class="nav-menu__link nav-menu__link_selected">home</a></li>
-          <li class="nav-menu__item"><a href="https://prostakkotak.github.io/about.html" class="nav-menu__link">about</a></li>
-          <li class="nav-menu__item"><a href="https://prostakkotak.github.io/portfolio.html" class="nav-menu__link">portfolio</a></li>
-          <li class="nav-menu__item"><a href="https://prostakkotak.github.io/blog.html" class="nav-menu__link">blog</a></li>
-          <li class="nav-menu__item"><a href="https://prostakkotak.github.io/contact.html" class="nav-menu__link">contact</a></li>
-          <li class="nav-menu__item nav-menu__item_search"><i class="fas fa-search"></i></li>
+        <ul class="nav__menu">
+          <li class="nav__item"><a href="https://prostakkotak.github.io" class="nav__link nav__link_selected">home</a></li>
+          <li class="nav__item"><a href="https://prostakkotak.github.io/about.html" class="nav__link">about</a></li>
+          <li class="nav__item"><a href="https://prostakkotak.github.io/portfolio.html" class="nav__link">portfolio</a></li>
+          <li class="nav__item"><a href="https://prostakkotak.github.io/blog.html" class="nav__link">blog</a></li>
+          <li class="nav__item"><a href="https://prostakkotak.github.io/contact.html" class="nav__link">contact</a></li>
+          <li class="nav__item nav__item_search">
+            <div id="open_search_block" class="nav__item_search-buttons">
+              <i id="open_search_button" class="fas fa-search current"></i>
+              <i id="close_search_button" class="fas fa-times"></i>
+            </div>
+          </li>
         </ul>
       </nav>
       <div class="nav-search">
@@ -69,76 +82,80 @@
       </ul>
       <div id="columns-container" class="products">
         <div id="first-column" class="products__column">
-         <ul class="products__list">
-          <li class="products__item">
-          <img class="products__product flexible-image"src="images/content-images/content-image-1.jpg">
-          <div class="products__product-background">
-            <div>+</div>
-          </div>
-          </li>
-          <li class="products__item">
-          <img class="products__product flexible-image"src="images/content-images/content-image-2.jpg" alt="">
-          <div class="products__product-background">
-            <div>+</div>
-          </div>
-          </li>
-          <li class="products__item">
-          <img class="products__product flexible-image"src="images/content-images/content-image-3.jpg" alt="">
-          <div class="products__product-background">
-            <div>+</div>
-          </div>
-          </li>
+          <ul class="products__list">
+            <li class="products__item">
+              <img class="products__product flexible-image" src="images/content-images/content-image-1.jpg">
+              <div class="products__product-background">
+                <div>+</div>
+              </div>
+            </li>
+            <li class="products__item">
+              <img class="products__product flexible-image" src="images/content-images/content-image-2.jpg" alt="">
+              <div class="products__product-background">
+                <div>+</div>
+              </div>
+            </li>
+            <li class="products__item">
+              <img class="products__product flexible-image" src="images/content-images/content-image-3.jpg" alt="">
+              <div class="products__product-background">
+                <div>+</div>
+              </div>
+            </li>
           </ul>
         </div>
         <div id="second-column" class="products__column">
-         <ul class="products__list">
-          <li class="products__item">
-          <img class="products__product flexible-image"src="images/content-images/content-image-4.jpg">
-          <div class="products__product-background">
-            <div>+</div>
-          </div>
-          </li>
-          <li class="products__item">
-          <img class="products__product flexible-image"src="images/content-images/content-image-5.jpg" alt="">
-          <div class="products__product-background">
-            <div>+</div>
-          </div>
-          </li>
-          <li class="products__item">
-          <img class="products__product flexible-image"src="images/content-images/content-image-6.jpg" alt="">
-          <div class="products__product-background">
-            <div>+</div>
-          </div>
-          </li>
+          <ul class="products__list">
+            <li class="products__item">
+              <img class="products__product flexible-image" src="images/content-images/content-image-4.jpg">
+              <div class="products__product-background">
+                <div>+</div>
+              </div>
+            </li>
+            <li class="products__item">
+              <img class="products__product flexible-image" src="images/content-images/content-image-5.jpg" alt="">
+              <div class="products__product-background">
+                <div>+</div>
+              </div>
+            </li>
+            <li class="products__item">
+              <img class="products__product flexible-image" src="images/content-images/content-image-6.jpg" alt="">
+              <div class="products__product-background">
+                <div>+</div>
+              </div>
+            </li>
           </ul>
         </div>
         <div id="third-column" class="products__column">
-         <ul class="products__list">
-          <li class="products__item">
-          <img class="products__product flexible-image"src="images/content-images/content-image-6.jpg">
-          <div class="products__product-background">
-            <div>+</div>
-          </div>
-          </li>
-          <li class="products__item">
-          <img class="products__product flexible-image"src="images/content-images/content-image-7.jpg" alt="">
-          <div class="products__product-background">
-            <div>+</div>
-          </div>
-          </li>
-          <li class="products__item">
-          <img class="products__product flexible-image"src="images/content-images/content-image-8.jpg" alt="">
-          <div class="products__product-background">
-            <div>+</div>
-          </div>
-          </li>
+          <ul class="products__list">
+            <li class="products__item">
+              <img class="products__product flexible-image" src="images/content-images/content-image-6.jpg">
+              <div class="products__product-background">
+                <div>+</div>
+              </div>
+            </li>
+            <li class="products__item">
+              <img class="products__product flexible-image" src="images/content-images/content-image-7.jpg" alt="">
+              <div class="products__product-background">
+                <div>+</div>
+              </div>
+            </li>
+            <li class="products__item">
+              <img class="products__product flexible-image" src="images/content-images/content-image-8.jpg" alt="">
+              <div class="products__product-background">
+                <div>+</div>
+              </div>
+            </li>
           </ul>
-        </div>
-        <div class="load-more">
-          <input type="button" class="load-more__button" value="load more">
         </div>
       </div>
     </div>
+        <div class="pagination">
+          <ul class="pagination__pages-list">
+            <li class="pagination__page pagination__page_selected">1</li>
+            <li class="pagination__page">2</li>
+            <li class="pagination__page">3</li>
+          </ul>
+        </div>
     <footer class="footer">
       <div class="logo logo_footer"><img class="logo__img" src="images/logo.png" alt="logo"></div>
       <div class="footer__social-networks"><img src="images/social-networks.png" alt=""></div>
