@@ -14,7 +14,7 @@
 <body>
 
   <div class="wrapper">
-    <div class="header">
+    <header class="header">
       <nav class="nav">
         <div class="nav__open-button">
           <div class="trigram" id="trigram">
@@ -41,14 +41,14 @@
       <div class="nav-search">
         <input type="text" class="nav-search__input" placeholder="search..."><i class="fas fa-search"></i>
       </div>
-      <div class="slider">
-        <div class="slider__button slider__button_left">
+      <div id="slider" class="slider">
+        <div id="slider__button_left" class="slider__button slider__button_left">
           <div class="slider__arrow">&lt;</div>
         </div>
-        <div class="slider__button slider__button_right">
+        <div id="slider__button_right" class="slider__button slider__button_right">
           <div class="slider__arrow">&gt;</div>
         </div>
-        <ul class="slider__list">
+        <ul id="slider__list" class="slider__list">
           <li class="slider__item">
             <img class="slider__img" src="images/slider-images/slider-image-1.jpg" alt="">
             <div class="slider__item-wrapper">
@@ -69,9 +69,9 @@
           </li>
         </ul>
       </div>
-    </div>
-    <div class="content">
-      <ul class="categories">
+    </header>
+    <main class="content">
+      <nav class="categories">
         <li class="categories__item"><a href="#" class="categories__link">all</a></li>
         <li class="categories__item"><a href="#" class="categories__link">logo</a></li>
         <li class="categories__item"><a href="#" class="categories__link">mobile app</a></li>
@@ -79,8 +79,8 @@
         <li class="categories__item"><a href="#" class="categories__link">web design</a></li>
         <li class="categories__item"><a href="#" class="categories__link">ui/ix</a></li>
         <li class="categories__item"><a href="#" class="categories__link">branding</a></li>
-      </ul>
-      <div id="columns-container" class="products">
+      </nav>
+      <article id="columns-container" class="products">
         <div id="first-column" class="products__column">
           <ul class="products__list">
             <li class="products__item">
@@ -147,8 +147,8 @@
             </li>
           </ul>
         </div>
-      </div>
-    </div>
+      </article>
+    </main>
     <div class="pagination">
       <ul class="pagination__pages-list">
         <li class="pagination__page pagination__page_selected">1</li>
@@ -158,12 +158,18 @@
     </div>
     <footer class="footer">
       <div class="logo logo_footer"><img class="logo__img" src="images/logo.png" alt="logo"></div>
-      <div class="footer__social-networks"><img src="images/social-networks.png" alt=""></div>
+      <div class="footer__social-networks">
+        <i class="fab fa-vk"></i>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-telegram-plane"></i>
+        <i class="fab fa-github"></i>
+      </div>
     </footer>
   </div>
-  <script src="js/slider-script.js"></script>
-  <script src="js/nav-search-script.js"></script>
-  <script src="js/scrollAnimation.js"></script>
+  <script src="js/slider-script-min.js"></script>
+  <script src="js/nav-search-script-min.js"></script>
+  <script src="js/scrollAnimation-min.js"></script>
 </body>
 
 </html>

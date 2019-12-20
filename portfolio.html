@@ -14,7 +14,7 @@
 <body>
 
   <div class="wrapper">
-    <div class="header">
+    <header class="header">
       <nav class="nav">
         <div class="nav__open-button">
           <div class="trigram" id="trigram">
@@ -50,15 +50,15 @@
           </div>
         </div>
       </div>
-    </div>
+    </header>
 
     <div class="portfolio-nav">
       <input type="button" class="portfolio-nav__button portfolio-nav__button_previous" value="<  previous">
       <input type="button" class="portfolio-nav__button portfolio-nav__button_next" value="next  >">
       <input type="button" class="portfolio-nav__button portfolio-nav__button_show-all" value="&#9776; show all">
     </div>
-    
-    <div class="portfolio-details">
+
+    <main class="portfolio-details">
       <div class="portfolio-details__gallery">
         <div class="portfolio-details__full-image">
           <img class="flexible-image" src="images/content-images/content-image-1.jpg" alt="">
@@ -96,11 +96,17 @@
         <div class="portfolio-details__text portfolio-details__text_specifications">Mobile App, UI/UX design</div>
 
         <div class="share">
-          <input type="button" class="share__button" value="share">
-          <div class="share__social-networks"><img src="images/social-networks-alt.png" alt=""></div>
+          <input id="share__button" type="button" class="share__button" value="share">
+          <div id="share__social-networks" class="share__social-networks">
+            <i class="fab fa-vk"></i>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-telegram-plane"></i>
+            <i class="fab fa-github"></i>
+          </div>
         </div>
       </div>
-      <div class="portfolio-details__related-works">
+      <article class="portfolio-details__related-works">
         <div class="portfolio-details__header portfolio-details__header_related-works">related works</div>
         <div class="portfolio-details__text portfolio-details__text_related-works">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </div>
         <ul class="portfolio-details__related-images-list">
@@ -117,16 +123,17 @@
             <a href="#" class="portfolio-details__related-image-wrapper"></a>
           </li>
         </ul>
-      </div>
-    </div>
+      </article>
+    </main>
 
     <footer class="footer">
       <div class="logo logo_footer"><img class="logo__img" src="images/logo.png" alt="logo"></div>
       <div class="footer__social-networks"><img src="images/social-networks.png" alt=""></div>
     </footer>
   </div>
-  <script src="js/nav-search-script.js"></script>
-  <script src="js/gallery-script.js"></script>
+  <script src="js/nav-search-script-min.js"></script>
+  <script src="js/gallery-script-min.js"></script>
+  <script src="js/share-script-min.js"></script>
 </body>
 
 </html>

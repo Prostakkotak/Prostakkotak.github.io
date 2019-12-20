@@ -2,7 +2,8 @@ var gulp = require('gulp'),
   sass = require('gulp-sass'),
   watch = require('gulp-watch'),
   browserSync = require('browser-sync'),
-  cleanCSS = require('gulp-clean-css');
+  cleanCSS = require('gulp-clean-css'),
+  minify = require('gulp-minify');
 
 gulp.task('sass', function () {
   return gulp.src('styles/scss/**/*.scss')
@@ -21,16 +22,23 @@ gulp.task('browser-sync', function () {
 });
 
 gulp.task('code', function () {
-  return gulp.src('/*.html')
-    .pipe(browserSync.reload({
-      stream: true
-    }))
+  browserSync.reload()
+})
+
+gulp.task('js', function() {
+  return gulp.src('js-raw/**/*.js')
+  .pipe(minify({
+    noSource: true
+  }))
+  .pipe(gulp.dest('js'))
+  .pipe(browserSync.stream());
 })
 
 /* Gulp watch task */
 gulp.task('watch', function () {
   watch('styles/scss/**/*.scss', gulp.parallel('sass'))
-  watch('/*.html', gulp.parallel('code'))
+  watch('js-raw/**/*.js', gulp.parallel('js'))
+  watch('./*.html', gulp.parallel('code'))
 })
 
 /* Gulp default task */

@@ -1,0 +1,1 @@
+!function(){var t=document.getElementsByClassName("blog")[0],e=document.getElementsByClassName("blog__posts-column_sidebar")[0];t.onclick=function(t){for(var s=t.target;s!=this;)s.classList.contains("blog__sidebar-open-button")&&(s.classList.toggle("open"),e.classList.toggle("open")),s=s.parentElement}}();

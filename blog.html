@@ -14,7 +14,7 @@
 <body>
 
   <div class="wrapper">
-    <div class="header">
+    <header class="header">
       <nav class="nav">
         <div class="nav__open-button">
           <div class="trigram" id="trigram">
@@ -50,16 +50,16 @@
           </div>
         </div>
       </div>
-    </div>
+    </header>
 
-    <div class="blog">
+    <main class="blog">
       <div class="blog__sidebar-open-button">Sidebar
         <div class="blog__sidebar-open-arrow">
           <div class="blog__line"></div>
           <div class="blog__line"></div>
         </div>
       </div>
-      <div id="columns-container" class="blog__posts">
+      <article id="columns-container" class="blog__posts">
         <div id="first-column" class="blog__posts-column">
           <div class="blog__post">
             <div class="blog__post-text-block">
@@ -138,13 +138,13 @@
             <li class="pagination__page">3</li>
           </ul>
         </div>
-      </div>
-      <div id="third-column" class="blog__posts-column blog__posts-column_sidebar">
+      </article>
+      <aside id="third-column" class="blog__posts-column blog__posts-column_sidebar">
         <div class="blog__search">
           <input type="text" class="blog__search-input" placeholder="Search">
           <a href="#" class="blog__search-link"><i class="fas fa-search"></i></a>
         </div>
-        <div class="blog__widget">
+        <article class="blog__widget">
           <div class="blog__header blog__header_widget">recent posts</div>
           <div class="blog__widget-content">
             <ul class="blog__recent-posts">
@@ -178,8 +178,8 @@
               </li>
             </ul>
           </div>
-        </div>
-        <div class="blog__widget">
+        </article>
+        <article class="blog__widget">
           <div class="blog__header blog__header_widget">popular tags</div>
           <div class="blog__widget-content">
             <ul class="blog__tag-list">
@@ -192,8 +192,8 @@
               <li class="blog__tag-item">mechanical</li>
             </ul>
           </div>
-        </div>
-        <div class="blog__widget">
+        </article>
+        <article class="blog__widget">
           <div class="blog__header blog__header_widget">instagram</div>
           <div class="blog__widget-content">
             <ul class="blog__instaram-images-list">
@@ -235,18 +235,18 @@
               </li>
             </ul>
           </div>
-        </div>
-      </div>
-    </div>
+        </article>
+      </aside>
+    </main>
 
     <footer class="footer">
       <div class="logo logo_footer"><img class="logo__img" src="images/logo.png" alt="logo"></div>
       <div class="footer__social-networks"><img src="images/social-networks.png" alt=""></div>
     </footer>
   </div>
-  <script src="js/nav-search-script.js"></script>
-  <script src="js/blog-script.js"></script>
-  <script src="js/scrollAnimation.js"></script>
+  <script src="js/nav-search-script-min.js"></script>
+  <script src="js/blog-script-min.js"></script>
+  <script src="js/scrollAnimation-min.js"></script>
 </body>
 
 </html>
