@@ -310,6 +310,27 @@ body {
   right: 10%;
 }
 
+.slider__short-list {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  text-align: center;
+}
+
+.slider__short-list-item {
+  display: inline-block;
+  width: 25px;
+  height: 3px;
+  margin: 0 3px 0 0;
+  border: 1px solid #000000;
+  transition: 1s;
+}
+
+.slider__short-list-item.current {
+  background-color: #000000;
+  transition: 1s;
+}
+
 .pagination {
   width: 100%;
   text-align: center;
@@ -2352,6 +2373,10 @@ body {
   .slider__button:hover {
     background-color: rgba(0, 0, 0, .2);
     transition: 200ms;
+  }
+  
+  .slider__short-list {
+    top: 10%;
   }
 
   .blog__posts-column:nth-child(1) {
