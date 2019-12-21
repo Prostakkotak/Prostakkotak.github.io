@@ -314,6 +314,7 @@ body {
   position: absolute;
   bottom: 10%;
   width: 100%;
+  z-index: 10;
   text-align: center;
 }
 
@@ -326,9 +327,12 @@ body {
   transition: 1s;
 }
 
+.slider__short-list-item:hover {
+  cursor: pointer;
+}
+
 .slider__short-list-item.current {
   background-color: #000000;
-  transition: 1s;
 }
 
 .pagination {

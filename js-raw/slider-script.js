@@ -15,6 +15,8 @@
   for (let i = 0; i < sliderItem.length; i++) {
     let shortListItem = document.createElement('li');
     shortListItem.classList.add('slider__short-list-item');
+    sliderItem[i].setAttribute('data-number', i);
+    shortListItem.setAttribute('data-number', i);
     shortList.appendChild(shortListItem);
   }
 
@@ -52,6 +54,22 @@
           shortListItems[currentItem].classList.add('current');
         }
 
+      }
+
+      if (target.classList.contains('slider__short-list-item')) {
+        let selectedItem = +(target.getAttribute('data-number')); // ВЫчисление номера указанного элемента по data-number
+        if (selectedItem == 0) { // Если это первый элемент, то прокрутка сбрасывается
+          currentScrollWidth = 0;
+        } else { // Если не первый, то происходит расчет нужной прокрутки
+          currentScrollWidth = selectedItem * (sliderItem[0].offsetWidth + 4);
+          currentScrollWidth = -currentScrollWidth
+        }
+
+        sliderList.style.marginLeft = currentScrollWidth + 'px';
+        
+        /* Переназначение current на указанный элемент */
+        shortList.getElementsByClassName('current')[0].classList.remove('current');
+        target.classList.add('current');
       }
 
       target = target.parentNode; // Чтобы функция не повесила всю страницу
