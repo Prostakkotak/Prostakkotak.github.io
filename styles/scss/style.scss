@@ -13,13 +13,30 @@ body {
   max-width: 100%;
 }
 
+.body-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .85);
+  transition: 600ms;
+  z-index: -1;
+}
+
+.body-shadow.active {
+  opacity: 1;
+  z-index: 8000;
+  transition: 600ms;
+}
+
 .wrapper {
+  position: relative;
   max-width: 1600px;
   margin: 0 auto;
   overflow: hidden;
 }
-
-.header {}
 
 .nav__open-button {
   display: none;
@@ -2099,7 +2116,13 @@ body {
 @media screen and (max-width: 850px) {
 
   .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
     display: block;
+    z-index: 9999;
+    width: 100%;
+    background-color: #FFFFFF;
 
     .nav__open-button {
       display: block;
@@ -2116,17 +2139,17 @@ body {
   }
 
   .nav__menu {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    transform: translate(-100vw, 0);
-    opacity: 0;
+    position: fixed;
+    height: 100vh;
+    width: 70%;
+    transform: translateX(-100%);
     transition: 600ms;
+    z-index: 9999;
+    background-color: #FFFFFF;
 
     .nav__item {
       display: block;
-      padding: 5px 0 5px 8px;
+      padding: 7px 0 7px 8px;
       margin: 0;
       transition: 200ms;
     }
@@ -2140,12 +2163,22 @@ body {
       padding: 0;
     }
 
+    .nav-search {
+      display: block;
+      transform: translate(0, 0);
+      margin: 0;
+      padding: 7px 0 7px 8px;
+      transition: 600ms;
+    }
+
+    .nav__item_search {
+      display: none;
+    }
+
   }
 
   .nav__menu.open {
-    position: relative;
     transform: translate(0, 0);
-    opacity: 1;
     transition: 600ms;
   }
 
@@ -2154,20 +2187,12 @@ body {
   }
 
   .nav-search {
-    opacity: 0;
-    display: block;
-    transform: translate(100vw, 0);
-    padding-left: 8px;
+    display: none;
   }
 
   .nav-search__input {
     width: 50%;
     min-width: 100px;
-  }
-
-  .nav-search.open {
-    opacity: 1;
-    transform: translate(0, 0);
     margin: 0;
   }
 
