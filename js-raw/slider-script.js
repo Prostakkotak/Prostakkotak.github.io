@@ -1,108 +1,111 @@
-(function () {
-  /* Массив элементов li */
-  var sliderItem = document.getElementsByClassName("slider__item"),
-    sliderItemWidth = sliderItem[0].offsetWidth; // Нынешняя ширина одного слайда
-  /* Список со слайдами */
-  var sliderList = document.getElementById("slider__list");
+var sliderHeader = {
+    container: document.getElementById('slider'),
+    list: document.getElementById('slider__list'),
+    items: document.getElementsByClassName('slider__item'),
+    shortList: document.getElementById('slider__short-list'),
+    shortListItems: document.getElementsByClassName('slider__short-list-item'),
+    leftButton: document.getElementById('slider__button_left'),
+    rightButton: document.getElementById('slider__button_right')
+}
 
-  if (sliderItem.length != 1) {
-    
-    /* Текущая и максимальная длина прокрутки слайдера */
-    var maxScrollWidth = (sliderItem.length - 1) * sliderItem[0].offsetWidth + 4; // Без добавления 4 криво работает
-    maxScrollWidth = -maxScrollWidth;
-    var currentScrollWidth = 0;
+createSlider(sliderHeader);
 
-    var shortList = document.getElementById("slider__short-list");
+function createSlider(obj) {
+    if (obj.items.length != 1) {
 
-    for (let i = 0; i < sliderItem.length; i++) {
-      let shortListItem = document.createElement("li");
-      shortListItem.classList.add("slider__short-list-item");
-      sliderItem[i].setAttribute("data-number", i);
-      shortListItem.setAttribute("data-number", i);
-      shortList.appendChild(shortListItem);
-    }
+        for (let i = 0; i < obj.items.length; i++) {
 
-    var shortListItems = shortList.getElementsByClassName(
-      "slider__short-list-item"
-    );
-    shortListItems[0].classList.add("current");
+            let shortListItem = document.createElement('li')
+            shortListItem.classList.add('slider__short-list-item')
+            shortListItem.setAttribute('data-slide-number', i)
 
-    document.getElementById("slider").onclick = function (e) {
-      var target = e.target;
-
-      while (target != this) {
-        if (target == document.getElementById("slider__button_left")) {
-          if (currentScrollWidth < 0) {
-            // Перелистывание если с размерами все в порядке
-            currentScrollWidth =
-              currentScrollWidth + sliderItem[0].offsetWidth + 4;
-            sliderList.style.marginLeft = currentScrollWidth + "px";
-
-            let currentItem = Math.floor(-currentScrollWidth / sliderItemWidth); // Вычисления номера слайда отображаемого на экране
-            shortListItems[currentItem + 1].classList.remove("current");
-            shortListItems[currentItem].classList.add("current");
-          }
+            obj.shortList.appendChild(shortListItem);
         }
 
-        if (target == document.getElementById("slider__button_right")) {
-          if (currentScrollWidth > maxScrollWidth) {
-            // Перелистывание если с размерами все в порядке
-            currentScrollWidth =
-              currentScrollWidth - sliderItem[0].offsetWidth - 4;
-            sliderList.style.marginLeft = currentScrollWidth + "px";
+        obj.shortListItems[0].classList.add('current');
 
-            let currentItem = Math.floor(-currentScrollWidth / sliderItemWidth); // Вычисления номера слайда отображаемого на экране
-            if (currentItem == 0) {
-              shortListItems[0].classList.remove("current");
-            } else {
-              shortListItems[currentItem - 1].classList.remove("current");
+        if (!obj.leftButton) obj.leftButton = '';
+        if (!obj.rightButton) obj.rightButton = '';
+
+        var itemWidth = obj.items[0].offsetWidth
+
+        var betweenElemsDistance = Math.abs(obj.items[0].offsetLeft + obj.items[0].offsetWidth - obj.items[1].offsetLeft);
+
+        var maxScrollWidth = -((obj.items.length - 1) * obj.items[0].offsetWidth + betweenElemsDistance);
+        var currentScrollWidth = 0;
+
+        obj.container.onclick = function (e) {
+            var target = e.target;
+
+            while (target != this) {
+                if (target == obj.rightButton) {
+                    if (currentScrollWidth > maxScrollWidth) {
+                        let currentItem = Math.floor(-currentScrollWidth / itemWidth);
+
+                        currentScrollWidth =
+                            currentScrollWidth - itemWidth - betweenElemsDistance;
+                        obj.list.style.marginLeft = currentScrollWidth + "px";
+
+                        obj.shortListItems[currentItem].classList.remove('current')
+                        obj.shortListItems[currentItem + 1].classList.add('current')
+                    } else {
+                        currentScrollWidth = 0;
+                        obj.list.style.marginLeft = currentScrollWidth + 'px';
+
+                        obj.shortListItems[obj.shortListItems.length - 1].classList.remove('current')
+                        obj.shortListItems[0].classList.add('current')
+                    }
+                } else if (target == obj.leftButton) {
+                    if (currentScrollWidth < 0) {
+                        let currentItem = Math.floor(-currentScrollWidth / itemWidth);
+
+                        currentScrollWidth =
+                            currentScrollWidth + itemWidth + betweenElemsDistance;
+                        obj.list.style.marginLeft = currentScrollWidth + 'px';
+
+                        obj.shortListItems[currentItem].classList.remove('current')
+                        obj.shortListItems[currentItem - 1].classList.add('current')
+                    } else {
+                        currentScrollWidth = maxScrollWidth;
+                        obj.list.style.marginLeft = currentScrollWidth + 'px';
+
+                        obj.shortListItems[0].classList.remove('current')
+                        obj.shortListItems[obj.shortListItems.length - 1].classList.add('current')
+                    }
+                } else if (target.classList.contains('slider__short-list-item')) {
+
+                    let currentItem = Math.floor(-currentScrollWidth / itemWidth);
+                    obj.shortListItems[currentItem].classList.remove('current')
+
+                    if (+target.getAttribute('data-slide-number') != 0) {
+                        currentScrollWidth =
+                            (-itemWidth * target.getAttribute('data-slide-number')) - betweenElemsDistance;
+                    } else {
+                        currentScrollWidth = 0
+                    }
+
+                    obj.shortListItems[+target.getAttribute('data-slide-number')].classList.add('current')
+                    obj.list.style.marginLeft = currentScrollWidth + 'px';
+                }
+
+                target = target.parentNode;
             }
-            shortListItems[currentItem].classList.add("current");
-          }
         }
 
-        if (target.classList.contains("slider__short-list-item")) {
-          let selectedItem = +target.getAttribute("data-number"); // ВЫчисление номера указанного элемента по data-number
-          if (selectedItem == 0) {
-            // Если это первый элемент, то прокрутка сбрасывается
-            currentScrollWidth = 0;
-          } else {
-            // Если не первый, то происходит расчет нужной прокрутки
-            currentScrollWidth = selectedItem * (sliderItem[0].offsetWidth + 4);
-            currentScrollWidth = -currentScrollWidth;
-          }
+        addEventListener("resize", function () {
+            let currentItem = Math.floor(-currentScrollWidth / itemWidth); // Вычисления номера слайда отображаемого на экране
 
-          sliderList.style.marginLeft = currentScrollWidth + "px";
+            if (currentItem > 0) {
+                // Если это не самый первый слайд, то идет перерасчет ширины прокрутки для новой ширины окна браузера
+                currentScrollWidth = -((obj.items[0].offsetWidth + betweenElemsDistance) * currentItem);
+            } else {
+                currentScrollWidth = 0;
+            }
 
-          /* Переназначение current на указанный элемент */
-          shortList
-            .getElementsByClassName("current")[0]
-            .classList.remove("current");
-          target.classList.add("current");
-        }
-
-        target = target.parentNode; // Чтобы функция не повесила всю страницу
-      }
-    };
-
-    addEventListener("resize", function () {
-      let currentItem = Math.floor(-currentScrollWidth / sliderItemWidth); // Вычисления номера слайда отображаемого на экране
-
-      if (currentItem > 0) {
-        // Если это не самый первый слайд, то идет перерасчет ширины прокрути для новой ширины окна браузера
-        currentScrollWidth = (sliderItem[0].offsetWidth + 4) * currentItem;
-        currentScrollWidth = -currentScrollWidth;
-      } else {
-        currentScrollWidth = 0;
-      }
-
-      sliderList.style.marginLeft = currentScrollWidth + "px"; // Возврат к стартовой точке
-      maxScrollWidth = (sliderItem.length - 1) * sliderItem[0].offsetWidth + 4;
-      maxScrollWidth = -maxScrollWidth; // Перерасчет максимальной ширины прокрутки
-      sliderItemWidth = sliderItem[0].offsetWidth; // Запоминаем новую текущую ширину одного слайда
-    });
-  } else {
-    document.getElementById('slider__button_left').remove()
-    document.getElementById('slider__button_right').remove()
-  }
-})();
+            obj.list.style.marginLeft = currentScrollWidth + "px"; // Перемещение на новую точку после перерасчета
+            maxScrollWidth = (obj.items.length - 1) * obj.items[0].offsetWidth + betweenElemsDistance;
+            maxScrollWidth = -maxScrollWidth; // Перерасчет максимальной ширины прокрутки
+            itemWidth = obj.items[0].offsetWidth; // Запоминаем новую текущую ширину одного слайда
+        });
+    }
+}
