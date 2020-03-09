@@ -40,7 +40,7 @@ function createSlider(obj) {
             while (target != this) {
                 if (target == obj.rightButton) {
                     if (currentScrollWidth > maxScrollWidth) {
-                        let currentItem = Math.floor(-currentScrollWidth / itemWidth);
+                        let currentItem = currentItemCalc();
 
                         currentScrollWidth =
                             currentScrollWidth - itemWidth - betweenElemsDistance;
@@ -57,7 +57,7 @@ function createSlider(obj) {
                     }
                 } else if (target == obj.leftButton) {
                     if (currentScrollWidth < 0) {
-                        let currentItem = Math.floor(-currentScrollWidth / itemWidth);
+                        let currentItem = currentItemCalc();
 
                         currentScrollWidth =
                             currentScrollWidth + itemWidth + betweenElemsDistance;
@@ -74,7 +74,7 @@ function createSlider(obj) {
                     }
                 } else if (target.classList.contains('slider__short-list-item')) {
 
-                    let currentItem = Math.floor(-currentScrollWidth / itemWidth);
+                    let currentItem = currentItemCalc();
                     obj.shortListItems[currentItem].classList.remove('current')
 
                     if (+target.getAttribute('data-slide-number') != 0) {
@@ -93,7 +93,7 @@ function createSlider(obj) {
         }
 
         addEventListener("resize", function () {
-            let currentItem = Math.floor(-currentScrollWidth / itemWidth); // Вычисления номера слайда отображаемого на экране
+            let currentItem = currentItemCalc();
 
             if (currentItem > 0) {
                 // Если это не самый первый слайд, то идет перерасчет ширины прокрутки для новой ширины окна браузера
@@ -103,9 +103,12 @@ function createSlider(obj) {
             }
 
             obj.list.style.marginLeft = currentScrollWidth + "px"; // Перемещение на новую точку после перерасчета
-            maxScrollWidth = (obj.items.length - 1) * obj.items[0].offsetWidth + betweenElemsDistance;
-            maxScrollWidth = -maxScrollWidth; // Перерасчет максимальной ширины прокрутки
+            maxScrollWidth = -((obj.items.length - 1) * obj.items[0].offsetWidth + betweenElemsDistance);
             itemWidth = obj.items[0].offsetWidth; // Запоминаем новую текущую ширину одного слайда
         });
+    }
+
+    function currentItemCalc() { // Находит индекс текущего элемента
+        return Math.floor(-currentScrollWidth / itemWidth)
     }
 }

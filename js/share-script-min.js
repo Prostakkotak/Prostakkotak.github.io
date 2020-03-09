@@ -1,1 +1,1 @@
-!function(){var e=document.getElementById("share__button"),t=document.getElementById("share__social-networks");document.getElementsByClassName("share")[0].onclick=function(n){for(var o=n.target;o!=this;)o==e&&t.classList.toggle("open"),o=o.parentNode}}();
+!function(){var e=document.getElementById("share__button"),t=document.getElementById("share__social-networks");e.addEventListener("click",function(){t.classList.toggle("open")})}();
