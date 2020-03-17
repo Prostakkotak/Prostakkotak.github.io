@@ -25,6 +25,7 @@ module.exports = {
             './js/scroll-animation-blog.js'
         ],
         contact: './js/header.js',
+        single_post: './js/header.js',
         styles: './styles/style.scss'
     },
     output: {
