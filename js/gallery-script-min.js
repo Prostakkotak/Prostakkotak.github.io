@@ -1,1 +1,0 @@
-!function(){var e=document.getElementsByClassName("portfolio-details__images-list")[0],t=document.getElementsByClassName("portfolio-details__full-image")[0].getElementsByTagName("img")[0];function a(e,a){t.src=e,t.alt=a}e.onclick=function(e){for(var t=e.target;t!=this;){if("A"==t.nodeName)return a(t.href,t.title),!1;t=t.parentNode}}}();

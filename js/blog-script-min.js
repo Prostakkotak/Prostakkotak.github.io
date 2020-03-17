@@ -1,1 +1,0 @@
-!function(){var e=document.getElementsByClassName("blog__posts-column_sidebar")[0],s=document.getElementsByClassName("blog__sidebar-open-button")[0];s.addEventListener("click",function(){s.classList.toggle("open"),e.classList.toggle("open")})}();
