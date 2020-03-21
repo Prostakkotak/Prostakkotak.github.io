@@ -1,1 +1,276 @@
-!function(e){var t={};function n(s){if(t[s])return t[s].exports;var o=t[s]={i:s,l:!1,exports:{}};return e[s].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=e,n.c=t,n.d=function(e,t,s){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:s})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var s=Object.create(null);if(n.r(s),Object.defineProperty(s,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(s,o,function(t){return e[t]}.bind(null,o));return s},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=7)}([function(e,t){document.body.offsetWidth<=850&&(document.getElementsByClassName("wrapper")[0].style.marginTop=document.getElementsByClassName("nav")[0].offsetHeight+"px");let n=document.getElementsByClassName("nav-search")[0],s=document.getElementById("close_search_button"),o=document.getElementById("open_search_button");bodyShadow=document.createElement("div"),bodyShadow.classList.add("body-shadow"),bodyShadow.id="body-shadow",document.getElementsByClassName("wrapper")[0].appendChild(bodyShadow),bodyShadow=document.getElementById("body-shadow");let a=document.getElementsByClassName("nav__menu")[0];document.getElementsByClassName("nav-search")[0];document.getElementsByClassName("nav")[0].onclick=function(e){"open_search_button"!=e.target.id&&"close_search_button"!=e.target.id||(n.classList.toggle("nav-search_open"),s.classList.toggle("current"),o.classList.toggle("current")),("trigram"==e.target.id||e.target.classList.contains("trigram__line"))&&(trigram.classList.toggle("open"),a.classList.toggle("open"),bodyShadow.classList.toggle("active"),tmpNavSearch=n.cloneNode(!0),a.classList.contains("open")?a.appendChild(tmpNavSearch):setTimeout((function(){a.removeChild(document.getElementsByClassName("nav-search")[0])}),600))},addEventListener("resize",(function(){document.body.offsetWidth<=850?(s.classList.contains("current")&&(n.classList.toggle("nav-search_open"),s.classList.toggle("current"),o.classList.toggle("current")),a.classList.contains("open")&&(a.appendChild(tmpNavSearch),bodyShadow.classList.add("active")),document.getElementsByClassName("wrapper")[0].style.marginTop=document.getElementsByClassName("nav")[0].offsetHeight+"px"):(a.getElementsByClassName("nav-search")[0]&&a.getElementsByClassName("nav-search")[0].remove(),bodyShadow.classList.contains("active")&&bodyShadow.classList.remove("active"),document.getElementsByClassName("wrapper")[0].style.marginTop="")}))},,,,,,,function(e,t,n){n(0),n(8),e.exports=n(9)},function(e,t){let n=document.getElementsByClassName("blog__posts-column_sidebar")[0],s=document.getElementsByClassName("blog__sidebar-open-button")[0];s.addEventListener("click",(function(){s.classList.toggle("open"),n.classList.toggle("open")}))},function(e,t){let n=!1;window.addEventListener("scroll",(function(e){0==n&&window.requestAnimationFrame((function(){a(e),n=!1}));n=!0}),!1),document.addEventListener("DOMContentLoaded",a,!1);let s=document.getElementById("columns-container"),o=(document.getElementById("first-column"),document.getElementById("second-column"),document.getElementById("third-column"));function a(e){if(l(s)){let e=document.getElementsByClassName("blog__post"),t=o.getElementsByClassName("blog__widget");for(let t=0;t<e.length;t++)l(e[t])?e[t].classList.add("active"):e[t].classList.remove("active");for(let e=0;e<t.length;e++)l(o)?o.classList.add("active"):o.classList.remove("active"),l(o.getElementsByClassName("blog__search")[0])?o.getElementsByClassName("blog__search")[0].classList.add("active"):o.getElementsByClassName("blog__search")[0].classList.remove("active"),l(t[e])?t[e].classList.add("active"):t[e].classList.remove("active")}}function l(e){let t=e.getBoundingClientRect(),n=t.top,s=t.bottom,o=t.height;return n+o>=0&&o+window.innerHeight>=s}}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
+
+if (document.body.offsetWidth <= 850) {
+  document.getElementsByClassName('wrapper')[0].style.marginTop =
+    document.getElementsByClassName('nav')[0].offsetHeight + 'px';
+}
+
+let navSearch = document.getElementsByClassName('nav-search')[0],
+  searchCloseButton = document.getElementById('close_search_button'),
+  searchOpenButton = document.getElementById('open_search_button');
+
+bodyShadow = document.createElement('div');
+bodyShadow.classList.add('body-shadow');
+bodyShadow.id = 'body-shadow';
+
+document.getElementsByClassName('wrapper')[0].appendChild(bodyShadow);
+
+bodyShadow = document.getElementById('body-shadow');
+
+let dropDownNav = document.getElementsByClassName('nav__menu')[0],
+  dropDownNavSearch = document.getElementsByClassName('nav-search')[0];
+
+document.getElementsByClassName('nav')[0].onclick = function (e) {
+  if (e.target.id == 'open_search_button' || e.target.id == 'close_search_button') {
+    navSearch.classList.toggle('nav-search_open');
+    searchCloseButton.classList.toggle('current');
+    searchOpenButton.classList.toggle('current');
+  }
+
+  if (e.target.id == 'trigram' || e.target.classList.contains('trigram__line')) {
+    trigram.classList.toggle('open');
+    dropDownNav.classList.toggle('open');
+    bodyShadow.classList.toggle('active')
+
+    tmpNavSearch = navSearch.cloneNode(true)
+
+    if (dropDownNav.classList.contains('open')) {
+      dropDownNav.appendChild(tmpNavSearch)
+
+    } else {
+      setTimeout(function () {
+        dropDownNav.removeChild(document.getElementsByClassName('nav-search')[0])
+      }, 600)
+    }
+  }
+}
+
+addEventListener('resize', function () {
+  if (document.body.offsetWidth <= 850) { // Если окно <= 850px то открытая строка поиска закрывается
+    if (searchCloseButton.classList.contains('current')) {
+      navSearch.classList.toggle('nav-search_open');
+      searchCloseButton.classList.toggle('current');
+      searchOpenButton.classList.toggle('current');
+    }
+
+    if (dropDownNav.classList.contains('open')) {
+      dropDownNav.appendChild(tmpNavSearch)
+      bodyShadow.classList.add('active');
+    }
+
+    document.getElementsByClassName('wrapper')[0].style.marginTop =
+      document.getElementsByClassName('nav')[0].offsetHeight + 'px';
+  } else {
+    if (dropDownNav.getElementsByClassName('nav-search')[0]) {
+      dropDownNav.getElementsByClassName('nav-search')[0].remove()
+    }
+    if (bodyShadow.classList.contains('active')) {
+      bodyShadow.classList.remove('active');
+    }
+
+    document.getElementsByClassName('wrapper')[0].style.marginTop = '';
+  }
+})
+
+/***/ }),
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(0);
+__webpack_require__(8);
+module.exports = __webpack_require__(9);
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+let sidebar = document.getElementsByClassName('blog__posts-column_sidebar')[0],
+  sidebarOpenButton = document.getElementsByClassName('blog__sidebar-open-button')[0];
+
+
+sidebarOpenButton.addEventListener('click', function () {
+  sidebarOpenButton.classList.toggle('open');
+  sidebar.classList.toggle('open');
+})
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+let isScrolling = false;
+
+window.addEventListener("scroll", throttleScroll, false);
+
+function throttleScroll(e) {
+  if (isScrolling == false) {
+    window.requestAnimationFrame(function () {
+      scrolling(e);
+      isScrolling = false;
+    });
+  }
+  isScrolling = true;
+}
+
+document.addEventListener("DOMContentLoaded", scrolling, false);
+
+// Переменные для scrolling()
+let columnsContainer = document.getElementById('columns-container');
+
+let firstColumn = document.getElementById('first-column'),
+  secondColumn = document.getElementById('second-column'),
+  thirdColumn = document.getElementById('third-column');
+
+function scrolling(e) {
+
+  if (isPartiallyVisible(columnsContainer)) {
+    let listItems = document.getElementsByClassName('blog__post'),
+      widgets = thirdColumn.getElementsByClassName('blog__widget');
+
+    for (let i = 0; i < listItems.length; i++) {
+
+      if (isPartiallyVisible(listItems[i])) {
+        listItems[i].classList.add('active');
+      } else {
+        listItems[i].classList.remove('active');
+      }
+    }
+    for (let i = 0; i < widgets.length; i++) {
+
+      if (isPartiallyVisible(thirdColumn)) {
+        thirdColumn.classList.add('active');
+      } else {
+        thirdColumn.classList.remove('active');
+      }
+
+      if (isPartiallyVisible(thirdColumn.getElementsByClassName('blog__search')[0])) {
+        thirdColumn.getElementsByClassName('blog__search')[0].classList.add('active');
+      } else {
+        thirdColumn.getElementsByClassName('blog__search')[0].classList.remove('active');
+      }
+
+      if (isPartiallyVisible(widgets[i])) {
+        widgets[i].classList.add('active');
+      } else {
+        widgets[i].classList.remove('active');
+      }
+    }
+  }
+}
+
+// Функция проверяет виден ли элемент частично
+function isPartiallyVisible(el) {
+  let elementBoundary = el.getBoundingClientRect();
+
+  let top = elementBoundary.top;
+  let bottom = elementBoundary.bottom;
+  let height = elementBoundary.height;
+
+  return ((top + height >= 0) && (height + window.innerHeight >= bottom));
+}
+// Функция проверяет виден ли элемент полностью
+function isFullyVisible(el) {
+  let elementBoundary = el.getBoundingClientRect();
+
+  let top = elementBoundary.top;
+  let bottom = elementBoundary.bottom;
+
+  return ((top >= 0) && (bottom <= window.innerHeight));
+}
+
+/***/ })
+/******/ ]);

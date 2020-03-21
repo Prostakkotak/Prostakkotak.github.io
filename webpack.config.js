@@ -1,6 +1,7 @@
 const path = require('path'),
     MiniCssExtractPlugin = require('mini-css-extract-plugin'),
-    BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+    BrowserSyncPlugin = require('browser-sync-webpack-plugin'),
+    CSSNanoPlugin = require('cssnano-webpack-plugin');
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -58,10 +59,12 @@ module.exports = {
             host: 'localhost',
             port: 3000,
             files: '../*.html',
-            // proxy the Webpack Dev Server endpoint
-            // (which should be serving on http://localhost:3100/)
-            // through BrowserSync
             server: { baseDir: ['./']}
         })
-    ]
+    ],
+    optimization: {
+        minimizer: [
+            new CSSNanoPlugin()
+        ]
+    }
 }

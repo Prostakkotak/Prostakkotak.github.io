@@ -1,1 +1,354 @@
-!function(t){var e={};function s(n){if(e[n])return e[n].exports;var o=e[n]={i:n,l:!1,exports:{}};return t[n].call(o.exports,o,o.exports,s),o.l=!0,o.exports}s.m=t,s.c=e,s.d=function(t,e,n){s.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:n})},s.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},s.t=function(t,e){if(1&e&&(t=s(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var n=Object.create(null);if(s.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var o in t)s.d(n,o,function(e){return t[e]}.bind(null,o));return n},s.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return s.d(e,"a",e),e},s.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},s.p="",s(s.s=1)}([function(t,e){document.body.offsetWidth<=850&&(document.getElementsByClassName("wrapper")[0].style.marginTop=document.getElementsByClassName("nav")[0].offsetHeight+"px");let s=document.getElementsByClassName("nav-search")[0],n=document.getElementById("close_search_button"),o=document.getElementById("open_search_button");bodyShadow=document.createElement("div"),bodyShadow.classList.add("body-shadow"),bodyShadow.id="body-shadow",document.getElementsByClassName("wrapper")[0].appendChild(bodyShadow),bodyShadow=document.getElementById("body-shadow");let i=document.getElementsByClassName("nav__menu")[0];document.getElementsByClassName("nav-search")[0];document.getElementsByClassName("nav")[0].onclick=function(t){"open_search_button"!=t.target.id&&"close_search_button"!=t.target.id||(s.classList.toggle("nav-search_open"),n.classList.toggle("current"),o.classList.toggle("current")),("trigram"==t.target.id||t.target.classList.contains("trigram__line"))&&(trigram.classList.toggle("open"),i.classList.toggle("open"),bodyShadow.classList.toggle("active"),tmpNavSearch=s.cloneNode(!0),i.classList.contains("open")?i.appendChild(tmpNavSearch):setTimeout((function(){i.removeChild(document.getElementsByClassName("nav-search")[0])}),600))},addEventListener("resize",(function(){document.body.offsetWidth<=850?(n.classList.contains("current")&&(s.classList.toggle("nav-search_open"),n.classList.toggle("current"),o.classList.toggle("current")),i.classList.contains("open")&&(i.appendChild(tmpNavSearch),bodyShadow.classList.add("active")),document.getElementsByClassName("wrapper")[0].style.marginTop=document.getElementsByClassName("nav")[0].offsetHeight+"px"):(i.getElementsByClassName("nav-search")[0]&&i.getElementsByClassName("nav-search")[0].remove(),bodyShadow.classList.contains("active")&&bodyShadow.classList.remove("active"),document.getElementsByClassName("wrapper")[0].style.marginTop="")}))},function(t,e,s){s(0),s(2),t.exports=s(3)},function(t,e){!function(t){if(1!=t.items.length){for(let e=0;e<t.items.length;e++){let s=document.createElement("li");s.classList.add("slider__short-list-item"),s.setAttribute("data-slide-number",e),t.shortList.appendChild(s)}t.shortListItems[0].classList.add("current"),t.leftButton||(t.leftButton=""),t.rightButton||(t.rightButton="");var e=t.items[0].offsetWidth,s=Math.abs(t.items[0].offsetLeft+t.items[0].offsetWidth-t.items[1].offsetLeft),n=-((t.items.length-1)*t.items[0].offsetWidth+s),o=0;t.container.onclick=function(r){let a=r.target;for(;a!=this;){if(a==t.rightButton)if(o>n){let n=i();o=o-e-s,t.list.style.marginLeft=o+"px",t.shortListItems[n].classList.remove("current"),t.shortListItems[n+1].classList.add("current")}else o=0,t.list.style.marginLeft=o+"px",t.shortListItems[t.shortListItems.length-1].classList.remove("current"),t.shortListItems[0].classList.add("current");else if(a==t.leftButton)if(o<0){let n=i();o=o+e+s,t.list.style.marginLeft=o+"px",t.shortListItems[n].classList.remove("current"),t.shortListItems[n-1].classList.add("current")}else o=n,t.list.style.marginLeft=o+"px",t.shortListItems[0].classList.remove("current"),t.shortListItems[t.shortListItems.length-1].classList.add("current");else if(a.classList.contains("slider__short-list-item")){let n=i();t.shortListItems[n].classList.remove("current"),o=0!=+a.getAttribute("data-slide-number")?-e*a.getAttribute("data-slide-number")-s:0,t.shortListItems[+a.getAttribute("data-slide-number")].classList.add("current"),t.list.style.marginLeft=o+"px"}a=a.parentNode}},addEventListener("resize",(function(){let r=i();o=r>0?-(t.items[0].offsetWidth+s)*r:0,t.list.style.marginLeft=o+"px",n=-((t.items.length-1)*t.items[0].offsetWidth+s),e=t.items[0].offsetWidth}))}function i(){return Math.floor(-o/e)}}({container:document.getElementById("slider"),list:document.getElementById("slider__list"),items:document.getElementsByClassName("slider__item"),shortList:document.getElementById("slider__short-list"),shortListItems:document.getElementsByClassName("slider__short-list-item"),leftButton:document.getElementById("slider__button_left"),rightButton:document.getElementById("slider__button_right")})},function(t,e){let s=!1;window.addEventListener("scroll",(function(t){0==s&&window.requestAnimationFrame((function(){o(t),s=!1}));s=!0}),!1),document.addEventListener("DOMContentLoaded",o,!1);let n=document.getElementById("columns-container");document.getElementById("first-column"),document.getElementById("second-column"),document.getElementById("third-column");function o(t){if(i(n)){let t=document.getElementsByClassName("products__item");for(let e=0;e<t.length;e++)i(t[e])?t[e].classList.add("active"):t[e].classList.remove("active")}}function i(t){let e=t.getBoundingClientRect(),s=e.top,n=e.bottom,o=e.height;return s+o>=0&&o+window.innerHeight>=n}}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
+
+if (document.body.offsetWidth <= 850) {
+  document.getElementsByClassName('wrapper')[0].style.marginTop =
+    document.getElementsByClassName('nav')[0].offsetHeight + 'px';
+}
+
+let navSearch = document.getElementsByClassName('nav-search')[0],
+  searchCloseButton = document.getElementById('close_search_button'),
+  searchOpenButton = document.getElementById('open_search_button');
+
+bodyShadow = document.createElement('div');
+bodyShadow.classList.add('body-shadow');
+bodyShadow.id = 'body-shadow';
+
+document.getElementsByClassName('wrapper')[0].appendChild(bodyShadow);
+
+bodyShadow = document.getElementById('body-shadow');
+
+let dropDownNav = document.getElementsByClassName('nav__menu')[0],
+  dropDownNavSearch = document.getElementsByClassName('nav-search')[0];
+
+document.getElementsByClassName('nav')[0].onclick = function (e) {
+  if (e.target.id == 'open_search_button' || e.target.id == 'close_search_button') {
+    navSearch.classList.toggle('nav-search_open');
+    searchCloseButton.classList.toggle('current');
+    searchOpenButton.classList.toggle('current');
+  }
+
+  if (e.target.id == 'trigram' || e.target.classList.contains('trigram__line')) {
+    trigram.classList.toggle('open');
+    dropDownNav.classList.toggle('open');
+    bodyShadow.classList.toggle('active')
+
+    tmpNavSearch = navSearch.cloneNode(true)
+
+    if (dropDownNav.classList.contains('open')) {
+      dropDownNav.appendChild(tmpNavSearch)
+
+    } else {
+      setTimeout(function () {
+        dropDownNav.removeChild(document.getElementsByClassName('nav-search')[0])
+      }, 600)
+    }
+  }
+}
+
+addEventListener('resize', function () {
+  if (document.body.offsetWidth <= 850) { // Если окно <= 850px то открытая строка поиска закрывается
+    if (searchCloseButton.classList.contains('current')) {
+      navSearch.classList.toggle('nav-search_open');
+      searchCloseButton.classList.toggle('current');
+      searchOpenButton.classList.toggle('current');
+    }
+
+    if (dropDownNav.classList.contains('open')) {
+      dropDownNav.appendChild(tmpNavSearch)
+      bodyShadow.classList.add('active');
+    }
+
+    document.getElementsByClassName('wrapper')[0].style.marginTop =
+      document.getElementsByClassName('nav')[0].offsetHeight + 'px';
+  } else {
+    if (dropDownNav.getElementsByClassName('nav-search')[0]) {
+      dropDownNav.getElementsByClassName('nav-search')[0].remove()
+    }
+    if (bodyShadow.classList.contains('active')) {
+      bodyShadow.classList.remove('active');
+    }
+
+    document.getElementsByClassName('wrapper')[0].style.marginTop = '';
+  }
+})
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(0);
+__webpack_require__(2);
+module.exports = __webpack_require__(3);
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+let sliderHeader = {
+    container: document.getElementById('slider'),
+    list: document.getElementById('slider__list'),
+    items: document.getElementsByClassName('slider__item'),
+    shortList: document.getElementById('slider__short-list'),
+    shortListItems: document.getElementsByClassName('slider__short-list-item'),
+    leftButton: document.getElementById('slider__button_left'),
+    rightButton: document.getElementById('slider__button_right')
+}
+
+createSlider(sliderHeader);
+
+function createSlider(obj) {
+    if (obj.items.length != 1) {
+
+        for (let i = 0; i < obj.items.length; i++) {
+
+            let shortListItem = document.createElement('li')
+            shortListItem.classList.add('slider__short-list-item')
+            shortListItem.setAttribute('data-slide-number', i)
+
+            obj.shortList.appendChild(shortListItem);
+        }
+
+        obj.shortListItems[0].classList.add('current');
+
+        if (!obj.leftButton) obj.leftButton = '';
+        if (!obj.rightButton) obj.rightButton = '';
+
+        var itemWidth = obj.items[0].offsetWidth
+
+        var betweenElemsDistance = Math.abs(obj.items[0].offsetLeft + obj.items[0].offsetWidth - obj.items[1].offsetLeft);
+
+        var maxScrollWidth = -((obj.items.length - 1) * obj.items[0].offsetWidth + betweenElemsDistance);
+        var currentScrollWidth = 0;
+
+        obj.container.onclick = function (e) {
+            let target = e.target;
+
+            while (target != this) {
+                if (target == obj.rightButton) {
+                    if (currentScrollWidth > maxScrollWidth) {
+                        let currentItem = currentItemCalc();
+
+                        currentScrollWidth =
+                            currentScrollWidth - itemWidth - betweenElemsDistance;
+                        obj.list.style.marginLeft = currentScrollWidth + "px";
+
+                        obj.shortListItems[currentItem].classList.remove('current')
+                        obj.shortListItems[currentItem + 1].classList.add('current')
+                    } else {
+                        currentScrollWidth = 0;
+                        obj.list.style.marginLeft = currentScrollWidth + 'px';
+
+                        obj.shortListItems[obj.shortListItems.length - 1].classList.remove('current')
+                        obj.shortListItems[0].classList.add('current')
+                    }
+                } else if (target == obj.leftButton) {
+                    if (currentScrollWidth < 0) {
+                        let currentItem = currentItemCalc();
+
+                        currentScrollWidth =
+                            currentScrollWidth + itemWidth + betweenElemsDistance;
+                        obj.list.style.marginLeft = currentScrollWidth + 'px';
+
+                        obj.shortListItems[currentItem].classList.remove('current')
+                        obj.shortListItems[currentItem - 1].classList.add('current')
+                    } else {
+                        currentScrollWidth = maxScrollWidth;
+                        obj.list.style.marginLeft = currentScrollWidth + 'px';
+
+                        obj.shortListItems[0].classList.remove('current')
+                        obj.shortListItems[obj.shortListItems.length - 1].classList.add('current')
+                    }
+                } else if (target.classList.contains('slider__short-list-item')) {
+
+                    let currentItem = currentItemCalc();
+                    obj.shortListItems[currentItem].classList.remove('current')
+
+                    if (+target.getAttribute('data-slide-number') != 0) {
+                        currentScrollWidth =
+                            (-itemWidth * target.getAttribute('data-slide-number')) - betweenElemsDistance;
+                    } else {
+                        currentScrollWidth = 0
+                    }
+
+                    obj.shortListItems[+target.getAttribute('data-slide-number')].classList.add('current')
+                    obj.list.style.marginLeft = currentScrollWidth + 'px';
+                }
+
+                target = target.parentNode;
+            }
+        }
+
+        addEventListener("resize", function () {
+            let currentItem = currentItemCalc();
+
+            if (currentItem > 0) {
+                // Если это не самый первый слайд, то идет перерасчет ширины прокрутки для новой ширины окна браузера
+                currentScrollWidth = -((obj.items[0].offsetWidth + betweenElemsDistance) * currentItem);
+            } else {
+                currentScrollWidth = 0;
+            }
+
+            obj.list.style.marginLeft = currentScrollWidth + "px"; // Перемещение на новую точку после перерасчета
+            maxScrollWidth = -((obj.items.length - 1) * obj.items[0].offsetWidth + betweenElemsDistance);
+            itemWidth = obj.items[0].offsetWidth; // Запоминаем новую текущую ширину одного слайда
+        });
+    }
+
+    function currentItemCalc() { // Находит индекс текущего элемента
+        return Math.floor(-currentScrollWidth / itemWidth)
+    }
+}
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+let isScrolling = false;
+
+window.addEventListener("scroll", throttleScroll, false);
+
+function throttleScroll(e) {
+  if (isScrolling == false) {
+    window.requestAnimationFrame(function () {
+      scrolling(e);
+      isScrolling = false;
+    });
+  }
+  isScrolling = true;
+}
+
+document.addEventListener("DOMContentLoaded", scrolling, false);
+
+// Переменные для scrolling()
+let columnsContainer = document.getElementById('columns-container');
+
+let firstColumn = document.getElementById('first-column'),
+    secondColumn = document.getElementById('second-column'),
+    thirdColumn = document.getElementById('third-column');
+
+function scrolling(e) {
+    if (isPartiallyVisible(columnsContainer)) {
+        let listItems = document.getElementsByClassName('products__item');
+
+        for (let i = 0; i < listItems.length; i++) {
+
+            if (isPartiallyVisible(listItems[i])) {
+                listItems[i].classList.add('active');
+            } else {
+                listItems[i].classList.remove('active');
+            }
+        }
+    }
+}
+
+// Функция проверяет виден ли элемент частично
+function isPartiallyVisible(el) {
+  let elementBoundary = el.getBoundingClientRect();
+
+  let top = elementBoundary.top;
+  let bottom = elementBoundary.bottom;
+  let height = elementBoundary.height;
+
+  return ((top + height >= 0) && (height + window.innerHeight >= bottom));
+}
+// Функция проверяет виден ли элемент полностью
+function isFullyVisible(el) {
+  let elementBoundary = el.getBoundingClientRect();
+
+  let top = elementBoundary.top;
+  let bottom = elementBoundary.bottom;
+
+  return ((top >= 0) && (bottom <= window.innerHeight));
+}
+
+/***/ })
+/******/ ]);
