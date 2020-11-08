@@ -1,57 +1,52 @@
 let isScrolling = false;
 
-window.addEventListener("scroll", throttleScroll, false);
+window.addEventListener('scroll', throttleScroll, false);
+document.addEventListener('DOMContentLoaded', scrolling, false);
 
-function throttleScroll(e) {
-  if (isScrolling == false) {
-    window.requestAnimationFrame(function () {
-      scrolling(e);
-      isScrolling = false;
-    });
-  }
-  isScrolling = true;
+function throttleScroll() {
+	!isScrolling 
+		?
+			window.requestAnimationFrame(() => {
+				scrolling();
+				isScrolling = false;
+			})
+		: 
+			isScrolling = true;
 }
 
-document.addEventListener("DOMContentLoaded", scrolling, false);
-
 // Переменные для scrolling()
-let columnsContainer = document.getElementById('columns-container');
+const columnsContainer = document.getElementById('columns-container');
 
-let firstColumn = document.getElementById('first-column'),
-    secondColumn = document.getElementById('second-column'),
-    thirdColumn = document.getElementById('third-column');
+const firstColumn = document.getElementById('first-column'),
+	  secondColumn = document.getElementById('second-column'),
+	  thirdColumn = document.getElementById('third-column');
 
-function scrolling(e) {
+function scrolling() {
     if (isPartiallyVisible(columnsContainer)) {
-        let listItems = document.getElementsByClassName('products__item');
+        let listItems = document.querySelectorAll('.products__item');
 
-        for (let i = 0; i < listItems.length; i++) {
+		listItems.forEach = [].forEach;
 
-            if (isPartiallyVisible(listItems[i])) {
-                listItems[i].classList.add('active');
-            } else {
-                listItems[i].classList.remove('active');
-            }
-        }
+		listItems.forEach(el => {				
+			isPartiallyVisible(el) 
+				?
+					el.classList.add('active')
+				:
+					el.classList.remove('active')
+		});
     }
 }
 
 // Функция проверяет виден ли элемент частично
 function isPartiallyVisible(el) {
-  let elementBoundary = el.getBoundingClientRect();
+  let { top, bottom, height } = el.getBoundingClientRect();
 
-  let top = elementBoundary.top;
-  let bottom = elementBoundary.bottom;
-  let height = elementBoundary.height;
-
-  return ((top + height >= 0) && (height + window.innerHeight >= bottom));
+  return (top + height >= 0) && (height + window.innerHeight >= bottom);
 }
+
 // Функция проверяет виден ли элемент полностью
 function isFullyVisible(el) {
-  let elementBoundary = el.getBoundingClientRect();
+  let { top, bottom } = el.getBoundingClientRect();
 
-  let top = elementBoundary.top;
-  let bottom = elementBoundary.bottom;
-
-  return ((top >= 0) && (bottom <= window.innerHeight));
+  return (top >= 0) && (bottom <= window.innerHeight);
 }
